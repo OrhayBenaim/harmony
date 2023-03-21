@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto fill</title>
+    <script defer src="index.js"></script>
+    <style>
+      .summary-item {
+        background: rgb(250, 251, 252);
+        border-radius: 16px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1 1 0%;
+        padding-block: 16px;
+      }
+      .summary-item .summary-item-value {
+        font-weight: 700;
+        font-size: 25px;
+        color: rgb(0, 33, 105);
+      }
+
+      .summary-item .summary-item-title {
+        color: rgb(128, 144, 180);
+        font-size: 14px;
+      }
+
+      .grouped-switches {
+        display: flex;
+        gap: 5px;
+        -webkit-box-align: center;
+        align-items: center;
+      }
+
+      .grouped-switches--buttons {
+        border-radius: 8px;
+        border: 1px solid rgb(217, 222, 232);
+      }
+
+      .group-item {
+        cursor: pointer;
+        padding: 10px;
+        color: rgb(128, 144, 180);
+        font-weight: 400;
+        font-size: 14px;
+      }
+      .group-item.selected {
+        font-weight: 600;
+        color: rgb(49, 86, 255);
+        background-color: rgb(245, 247, 255);
+      }
+
+      .group-item:first-of-type {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+      .group-item:last-of-type {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="summary-item">
+      <span class="summary-item-value"><span id="count">0</span></span>
+      <span class="summary-item-title">Unfilled days</span>
+    </div>
+
+    <div class="grouped-switches grouped-switches--buttons">
+      <div class="group-item selected" id="autoFill">Fill</div>
+      <div class="group-item" id="refresh">Refresh</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Auto fill",
+  "version": "1.0.0",
+  "description": "fills harmony missing days 9 to 18",
+  "manifest_version": 3,
+  "author": "Orhay benaim",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Auto fill"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://harmony.synel.co.il/*"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ],
+  "permissions": ["activeTab"]
+}
