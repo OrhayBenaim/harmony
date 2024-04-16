@@ -1,12 +1,12 @@
 {
-  "name": "Auto fill",
+  "name": "Harmony auto filler",
   "version": "1.0.0",
-  "description": "fills harmony missing days 9 to 18",
+  "description": "A tool to automate filling absent schedule in the Harmony schedule platform",
   "manifest_version": 3,
   "author": "Orhay benaim",
   "action": {
     "default_popup": "index.html",
-    "default_title": "Auto fill"
+    "default_title": "Harmony auto filler"
   },
   "icons": {
     "16": "icon16.png",
