@@ -31,19 +31,34 @@ let time = {
   end: getEnd(),
 };
 document.querySelector("#autoFill").addEventListener("click", async () => {
-  const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-  const response = await chrome.tabs.sendMessage(tab.id, { message: "fill", time });
+  const [tab] = await chrome.tabs.query({
+    active: true,
+    lastFocusedWindow: true,
+  });
+  const response = await chrome.tabs.sendMessage(tab.id, {
+    message: "fill",
+    time,
+  });
+  console.log({ response });
   updateCount(response);
 });
 
 document.querySelector("#refresh").addEventListener("click", async () => {
-  const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-  const response = await chrome.tabs.sendMessage(tab.id, { message: "refresh" });
+  const [tab] = await chrome.tabs.query({
+    active: true,
+    lastFocusedWindow: true,
+  });
+  const response = await chrome.tabs.sendMessage(tab.id, {
+    message: "refresh",
+  });
   updateCount(response);
 });
 
 (async () => {
-  const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+  const [tab] = await chrome.tabs.query({
+    active: true,
+    lastFocusedWindow: true,
+  });
   const response = await chrome.tabs.sendMessage(tab.id, { message: "init" });
   // do something with response here, not outside the function
   updateCount(response);
